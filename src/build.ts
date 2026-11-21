@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function getArcBuild() {
+export async function getSacrudaBuild() {
   try {
-    const response = await axios.get("https://os.arcweb.nl/build", {
+    const response = await axios.get("https://os.sacruda.nl/build", {
       responseType: "text",
     });
 

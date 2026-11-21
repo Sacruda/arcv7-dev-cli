@@ -18,7 +18,7 @@ export async function scaffoldProject(app: ScriptedApp, project: Project, proces
   const branchName = "main";
 
   const templatesZip = (
-    await axios.get(`https://github.com/ArcOS-Project/${repoName}/archive/${branchName}.zip`, { responseType: "arraybuffer" })
+    await axios.get(`https://github.com/Sacruda/${repoName}/archive/${branchName}.zip`, { responseType: "arraybuffer" })
   ).data as ArrayBuffer;
 
   const { entries } = await unzip(templatesZip);

@@ -12,7 +12,7 @@
   "keywords": [],
   "author": "Izaak Kuipers <izaak.kuipers@gmail.com> (https://izkuipers.nl/)",
   "license": "MIT",
-  "description": "A command-line tool for developing ArcOS apps",
+  "description": "A command-line tool for developing Sacruda apps",
   "devDependencies": {
     "@types/node": "^22.15.19",
     "ts-node": "^10.9.2",
