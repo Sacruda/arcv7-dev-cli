@@ -2,7 +2,7 @@ import "colors";
 import { cwd } from "process";
 import signale from "signale";
 import packageJson from "../../../package.json";
-import { getArcBuild } from "../../build";
+import { getSacrudaBuild } from "../../build";
 import { Project } from "../../project";
 import { StartServer } from "../../server/api";
 import buildTSTPA, { containsTypescript } from "../../tools/build-ts-tpa";
@@ -26,7 +26,7 @@ export default async function DevCommand() {
     process.exit(1);
   }
 
-  const buildHash = await getArcBuild();
+  const buildHash = await getSacrudaBuild();
 
   if (project.metadata?.buildHash == null) {
     project.metadata!!.buildHash = buildHash;
@@ -40,7 +40,7 @@ export default async function DevCommand() {
 
   await StartServer(project);
 
-  const name = "ArcOS v7 CLI".green.bold;
+  const name = "Sacruda v7 CLI".green.bold;
   const version = `v${packageJson.version}`.gray;
   const arrow = "  > ".gray;
   const port = project.metadata?.devPort || 3128;
@@ -55,7 +55,7 @@ export default async function DevCommand() {
       `  ${name} ${version}`,
       "",
       `${arrow}${lis} ${url}`,
-      `${arrow}${run}  ${command} in ArcTerm to connect`,
+      `${arrow}${run}  ${command} in the Sacruda terminal to connect`,
       "",
       "  READY.".green.bold,
     ].join("\n")

@@ -1,10 +1,10 @@
 # v7cli
 
-A command-line utility for developing ArcOS v7 applications.
+A command-line utility for developing Sacruda v7 applications.
 
 ## Usage & Getting Started
 
-For detailed instructions on how to use this CLI tool for ArcOS application development, please refer to the [official ArcOS documentation](https://docs.arcapi.nl/getting-started/intro). Everything you need to know is documented on there.
+For detailed instructions on how to use this CLI tool for Sacruda application development, please refer to the [official Sacruda documentation](https://docs.sacruda.nl/getting-started/intro). Everything you need to know is documented on there.
 
 ## Author
 

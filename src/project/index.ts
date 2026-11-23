@@ -4,7 +4,7 @@ import { existsSync } from "fs";
 import { mkdir, readdir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
 import signale from "signale";
-import { getArcBuild } from "../build";
+import { getSacrudaBuild } from "../build";
 import { Filesystem } from "../server/fs";
 import { WebSock } from "../server/websocket";
 import { PackageMetadata } from "../types/package";
@@ -60,7 +60,7 @@ export class Project {
       payloadDir,
       devPort: devPort || 3128,
       repository,
-      buildHash: await getArcBuild(),
+      buildHash: await getSacrudaBuild(),
       noHotRelaunch: false,
     };
 
@@ -102,7 +102,7 @@ export class Project {
 
   async downloadTypeDefs(): Promise<string | undefined> {
     try {
-      const response = await axios.get("https://cdn.arcapi.nl/arcos.d.ts", {
+      const response = await axios.get("https://cdn.sacruda.nl/arcos.d.ts", {
         responseType: "text",
       });
 
@@ -113,7 +113,7 @@ export class Project {
   }
 
   async updateTypeDefs(force?: boolean) {
-    const liveHash = await getArcBuild();
+    const liveHash = await getSacrudaBuild();
 
     if (this.metadata!.buildHash !== liveHash && !force) {
       this.metadata!.buildHash = liveHash;
@@ -128,7 +128,7 @@ export class Project {
   }
 
   async areTypeDefsOutdated() {
-    const liveHash = await getArcBuild();
+    const liveHash = await getSacrudaBuild();
 
     return !!(this.metadata!.buildHash !== liveHash);
   }

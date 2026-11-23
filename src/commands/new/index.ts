@@ -10,7 +10,7 @@ import { PackageMetadata } from "../../types/package";
 import type { ProcessType } from "../../types/project";
 
 export default async function NewCommand(this: Command, destination: string) {
-  intro(`Create ArcOS Project - ${destination}`);
+  intro(`Create Sacruda Project - ${destination}`);
 
   const name = await text({
     message: "What do you want to name your app?",
@@ -71,7 +71,7 @@ export default async function NewCommand(this: Command, destination: string) {
     initialValue: `U:/Applications/${appId.toString()}`,
     validate(value) {
       if (!value.startsWith(`U:/Applications/`) || value === `U:/Applications/`)
-        return "This has to be an ArcOS path that starts with 'U:/Applications/'";
+        return "This has to be an Sacruda path that starts with 'U:/Applications/'";
     },
   });
 
@@ -79,7 +79,7 @@ export default async function NewCommand(this: Command, destination: string) {
     message: "What kind of app is this?",
     options: [
       { value: "AppProcess", label: "AppProcess", hint: "A window is included for the user to interact with." },
-      { value: "Process", label: "Process", hint: "No included window, yet has access to all ArcOS offers." },
+      { value: "Process", label: "Process", hint: "No included window, yet has access to all Sacruda offers." },
     ],
   });
 

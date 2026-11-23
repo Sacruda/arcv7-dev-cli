@@ -5,7 +5,7 @@ import { PackageMetadata } from "../types/package";
 import type { ProcessType } from "../types/project";
 
 export async function TpaWizard(pkg: PackageMetadata, processType: ProcessType) {
-  intro("Scaffold ArcOS App");
+  intro("Scaffold Sacruda App");
 
   const entrypoint = await text({
     message: "What do you want to call your entrypoint file?",
@@ -180,7 +180,7 @@ export async function TpaWizard(pkg: PackageMetadata, processType: ProcessType) 
         hint:
           processType === "Process"
             ? `Has no effect for process type "${processType}"`
-            : "Adds the ArcOS glass-like background to the window",
+            : "Adds the Sacruda glass-like background to the window",
       },
       {
         value: "hidden",

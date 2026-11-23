@@ -27,7 +27,7 @@ export default async function BuildCommand() {
       process.exit(1);
     }
 
-    intro("Build ArcOS Package");
+    intro("Build Sacruda Package");
     const spin = spinner();
     spin.start("Building...");
 
